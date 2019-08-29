@@ -75,8 +75,12 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+        'NAME': 'hacht_DB',
+        'HOST': "mongodb+srv://admin:admin@maincluster-rzyyj.mongodb.net/test?retryWrites=true&w=majority" ,
+        'USER': 'admin',
+        'PASSWORD': 'admin',
+        
     }
 }
 

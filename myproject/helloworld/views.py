@@ -10,20 +10,8 @@ import pyrebase
 
 
 
-def hello(reques):
-    #client = MongoClient("mongodb+srv://admin:admin@maincluster-rzyyj.mongodb.net/test?retryWrites=true&w=majority")
-
-    #db = client.get_database('hacht_DB')
-
-    #prueba = db.prueba
-
-    #count = prueba.count_documents({})
-
-    #print("Cantidad de registros: ",count)
-
-    #print("Registros encontrados:", list(prueba.find()))
-
-
+def helloFirebase(request):
+    
     config = {
     "apiKey": "AIzaSyCfRRjL3jvA8pY0jJ_SdSwwW9SV2zsZFlg",
     "authDomain": "inventario-ab622.firebaseapp.com",
@@ -50,3 +38,25 @@ def hello(reques):
     
 
     return HttpResponse(info)
+
+
+def helloMongo(request):
+    client = MongoClient("mongodb+srv://admin:admin@maincluster-rzyyj.mongodb.net/test?retryWrites=true&w=majority")
+
+    db = client.get_database('hacht_DB')
+
+    prueba = db.prueba
+
+    #count = prueba.count_documents({})
+    #print("Cantidad de registros: ",count)
+
+    #print("Registros encontrados:", list(prueba.find()))
+
+    return HttpResponse(list(prueba.find()))
+
+def index(request):
+  return render(
+        request,
+        'index.html',
+        context={},
+    )

@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from helloworld.views import hello
+from helloworld.views import helloFirebase, helloMongo, index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', hello),
+    path('firebase/', helloFirebase),
+    path('mongo/', helloMongo),
+    path('', index),
 ]

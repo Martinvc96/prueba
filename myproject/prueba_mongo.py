@@ -1,7 +1,7 @@
 #prueba conexion MongoDB
 
 import dns
-from pymongo import MongoClient
+#from pymongo import MongoClient
 from firebase import firebase
 import pyrebase
 
@@ -27,13 +27,13 @@ import pyrebase
 
 
 config = {
-    "apiKey": "AIzaSyCfRRjL3jvA8pY0jJ_SdSwwW9SV2zsZFlg",
-    "authDomain": "inventario-ab622.firebaseapp.com",
-    "databaseURL": "https://inventario-ab622.firebaseio.com",
-    "projectId": "inventario-ab622",
-    "storageBucket": "inventario-ab622.appspot.com",
-    "messagingSenderId": "933969484304",
-    "appId": "1:933969484304:web:8e79e29e2b246ce9"
+    "apiKey": "AIzaSyArQxRet5XqKI6v8948A2ZnHZOZsu7vCNY",
+    "authDomain": "hacht-7d98d.firebaseapp.com",
+    "databaseURL": "https://hacht-7d98d.firebaseio.com",
+    "projectId": "hacht-7d98d",
+    "storageBucket": "",
+    "messagingSenderId": "225406534324",
+    "appId": "1:225406534324:web:f5317f74d07ced54"
   }
 
     # initialize app with config
@@ -45,9 +45,47 @@ db = firebase.database()
 users = db.child("Users").get().each()
 #print(users)
 
+    ##USERS
+#data = {"email": "prueba4@algo.com",
+#        "name": "nombre4",
+#        "org":"org4",
+#        "password": "pass4",
+#        "role": "2",
+#        "salt": "salt4"}
 
-#data = {"email": "Mortimer@algo.com", "password": "yolo", "userName":"Mortimer 'Morty' Smith"}
-#db.child("Users").push(data)
+    ##PACIENTE_A
+#data = {"id_user": "user_id1",
+#        "identificador": "nombre1",
+#        "sexo":"m",
+#        "edad": "20"}
+
+
+    ##PACIENTE_D
+#data = {"id_user": "user_id1",
+#        "nombre": "nombre1",
+#        "ced":"1",
+#        "sexo": "f",
+#        "edad": "20",
+#        "res": "lugar1"}
+
+
+    ##SESION
+#data = {"id_paciente": "id1",
+#        "fecha": "nombre4",
+#        "obs":"org4",
+#        "est": "pass4"}
+
+
+    ##MUESTRA
+#data = {"id_sesion": "id1",
+#        "url_img": "url",
+#        "pred":"org4",
+#        "accuracy": "pass4",
+#        "obs": "2",
+#        "is_true": "salt4",
+#        "consent": "algo1"}
+
+#db.child("Muestra").push(data)
 
 info = []
 for user in users:
